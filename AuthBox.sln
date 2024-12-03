@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthBox.Api", "AuthBox.Api\AuthBox.Api.csproj", "{404C3EC1-8B4E-4305-A47A-9254826941CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthBox.Blazor", "AuthBox.Blazor\AuthBox.Blazor.csproj", "{9AF328AF-7340-4390-8703-604229FB2553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{404C3EC1-8B4E-4305-A47A-9254826941CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{404C3EC1-8B4E-4305-A47A-9254826941CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{404C3EC1-8B4E-4305-A47A-9254826941CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{404C3EC1-8B4E-4305-A47A-9254826941CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF328AF-7340-4390-8703-604229FB2553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF328AF-7340-4390-8703-604229FB2553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF328AF-7340-4390-8703-604229FB2553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF328AF-7340-4390-8703-604229FB2553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
