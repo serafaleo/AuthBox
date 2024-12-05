@@ -1,0 +1,31 @@
+﻿@page "/login"
+
+@using AuthBox.Models.Dtos.Users
+
+<MudCard>
+    <MudForm Model="@loginRequestDto" Validation="@(validator.ValidateValue)">
+        <MudCardContent>
+            <MudTextField @bind-Value="loginRequestDto.Email"
+                          For="@(() => loginRequestDto.Email)"
+                          Immediate="true"
+                          Label="Email" />
+            <MudTextField @bind-Value="loginRequestDto.Password"
+                          For="@(() => loginRequestDto.Password)"
+                          Immediate="true"
+                          Label="Password" />
+        </MudCardContent>
+    </MudForm>
+    <MudCardActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="@(async () => await Login())">Login</MudButton>
+    </MudCardActions>
+</MudCard>
+
+@code {
+    LoginRequestValidator validator = new();
+    LoginRequestDto loginRequestDto = new();
+
+    private async Task Login()
+    {
+
+    }
+}

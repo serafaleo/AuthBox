@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 
 namespace AuthBox.Models.Dtos.Users;
 public class LoginRequestDto
 {
-    public required string Email { get; set; }
-    public required string Password { get; set; }
+    public string? Email { get; set; }
+    public string? Password { get; set; }
 }
 
 public class LoginRequestValidator : AbstractValidator<LoginRequestDto>
@@ -18,4 +19,14 @@ public class LoginRequestValidator : AbstractValidator<LoginRequestDto>
         RuleFor(registerInfo => registerInfo.Password)
             .NotEmpty().WithMessage("Senha precisa ser preenchida.");
     }
+
+    public Func<object, string, Task<IEnumerable<string>>> ValidateValue => async (model, propertyName) =>
+    {
+        ValidationResult result = await ValidateAsync(ValidationContext<LoginRequestDto>.CreateWithOptions((LoginRequestDto)model, x => x.IncludeProperties(propertyName)));
+
+        if (result.IsValid)
+            return Array.Empty<string>();
+
+        return result.Errors.Select(e => e.ErrorMessage);
+    };
 }
