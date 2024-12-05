@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AuthBox.Models.Models;
 
-[Index(nameof(Email), nameof(Role), IsUnique = true)]
+[Index(nameof(Email), IsUnique = true)]
 public class User
 {
     [Key]
@@ -14,5 +14,4 @@ public class User
     public required byte[] PasswordSalt { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpiryTime { get; set; }
-    public required EUserRoles Role { get; set; }
 }

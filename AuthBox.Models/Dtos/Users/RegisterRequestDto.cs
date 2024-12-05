@@ -1,16 +1,16 @@
 ﻿using FluentValidation;
 
-namespace AuthBox.Models.Dtos;
-public class RegisterUserDto
+namespace AuthBox.Models.Dtos.Users;
+public class RegisterRequestDto
 {
     public required string Email { get; set; }
     public required string Password { get; set; }
     public required string PasswordConfirmation { get; set; }
 }
 
-public class RegisterUserValidator : AbstractValidator<RegisterUserDto>
+public class RegisterRequestValidator : AbstractValidator<RegisterRequestDto>
 {
-    public RegisterUserValidator()
+    public RegisterRequestValidator()
     {
         RuleFor(registerInfo => registerInfo.Email)
             .NotEmpty().WithMessage("Email precisa ser preenchido.")
