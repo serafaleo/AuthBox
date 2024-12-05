@@ -31,7 +31,7 @@ public class UserRepository : BaseRepository, IUserRepository
                 Email = registerInfo.Email,
                 PasswordHash = hashedPassword.Hash,
                 PasswordSalt = hashedPassword.Salt,
-                Role = EUserRoles.User
+                Role = EUserRoles.User // NOTE(serafa.leo): Default user role, the only one that can be created from this endpoint
             });
 
             return null;

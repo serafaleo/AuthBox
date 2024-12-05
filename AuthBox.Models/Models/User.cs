@@ -14,5 +14,5 @@ public class User
     public required byte[] PasswordSalt { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpiryTime { get; set; }
-    public required EUserRoles Role { get; set; } = EUserRoles.User;
+    public required EUserRoles Role { get; set; }
 }
