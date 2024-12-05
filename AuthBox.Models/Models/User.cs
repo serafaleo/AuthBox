@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AuthBox.Models.Enums;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace AuthBox.Models.Models;
@@ -13,5 +14,5 @@ public class User
     public required byte[] PasswordSalt { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpiryTime { get; set; }
-    public required string Role { get; set; }
+    public required EUserRoles Role { get; set; } = EUserRoles.User;
 }

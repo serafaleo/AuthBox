@@ -1,5 +1,7 @@
 using AuthBox.Api;
 using AuthBox.Api.Middlewares;
+using AuthBox.Api.Repositories;
+using AuthBox.Api.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -34,6 +36,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 builder.Services.AddAuthorization();
+
+#region Inject Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+#endregion
 
 WebApplication app = builder.Build();
 
